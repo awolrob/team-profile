@@ -1,7 +1,7 @@
 # 10 Object-Oriented Programming: Team Profile Generator
 
 ## Author: Rob Ellingson
-- Source: [Github](https://github.com/awolrob/Rob-Ellingson-Portfolio)
+- Source: [Github](https://github.com/awolrob/team-profile)
 
 ---
     AS A manager
