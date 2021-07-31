@@ -1,20 +1,5 @@
-# team-profile
+# 10 Object-Oriented Programming: Team Profile Generator
 
-    const inquirer = require('inquirer');
-    inquirer
-    .prompt([
-        /* Pass your questions in here */
-    ])
-    .then((answers) => {
-        // Use user feedback for... whatever!!
-    })
-    .catch((error) => {
-        if (error.isTtyError) {
-        // Prompt couldn't be rendered in the current environment
-        } else {
-        // Something else went wrong
-        }
-    });
 ---
     AS A manager
     I WANT to generate a webpage that displays my team's basic info
@@ -82,3 +67,15 @@
 
 ## Run
 * node index.js
+
+## Mock-Up
+
+The following image shows the generated HTML’s appearance and functionality. The styling in the image is just an example, so feel free to add your own styles:
+
+![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./assets/10-object-oriented-programming-homework-demo.png)
+
+## Final Page
+
+The following image was generated using the index.js application:
+
+![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./assets/Web-capture_31-7-2021_18543_.jpeg)

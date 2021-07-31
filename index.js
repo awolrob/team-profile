@@ -1,3 +1,5 @@
+/* VARIABLES */
+
 const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
@@ -8,12 +10,15 @@ const generatePage = require('./src/page-template');
 const engineerData = [];
 const internData = [];
 const teamData = {};
+/* END VARIABLES */
 
+/* FUNCTIONS */
+// Prompt for Manager data
 const promptManager = () => {
     console.log(`
-  =================
+  ================
   Add Team Manager
-  =================
+  ================
     `);
 
     return inquirer.prompt([
@@ -60,23 +65,27 @@ const promptManager = () => {
             name: 'officeNumber',
             message: 'Enter the team manager’s Office Number (Required)',
             validate(officeNumber) {
-                const pass = officeNumber.match(
-                    /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
-                );
-                if (pass) {
-                    return true;
-                }
-                return 'Please enter a valid US phone number';
+                const valid = !isNaN(parseFloat(officeNumber));
+                return valid || 'Please enter a number';
+                //if needed - validate phone number
+                // const pass = officeNumber.match(
+                //     /^([01]{1})?[-.\s]?\(?(\d{3})\)?[-.\s]?(\d{3})[-.\s]?(\d{4})\s?((?:#|ext\.?\s?|x\.?\s?){1}(?:\d+)?)?$/i
+                // );
+                // if (pass) {
+                //     return true;
+                // }
+                // return 'Please enter a valid US phone number';
             },
         }
     ]);
 };
 
+// Prompt for Engineer data
 const promptEngineer = engineerData => {
     console.log(`
-  =================
+  ===============
   Add an Engineer
-  =================
+  ===============
   `);
     return inquirer.prompt([
         {
@@ -133,11 +142,12 @@ const promptEngineer = engineerData => {
     ]);
 };
 
+// Prompt for Intern data
 const promptIntern = internData => {
     console.log(`
-  =================
+  =============
   Add an Intern
-  =================
+  =============
   `);
     return inquirer.prompt([
         {
@@ -194,6 +204,7 @@ const promptIntern = internData => {
     ]);
 };
 
+// Menu question  engineer and interm team members or exit
 const menuQuestions = menuData => {
     console.log(`
       ====================
@@ -216,6 +227,7 @@ const menuQuestions = menuData => {
 
 };
 
+// Add engineer data to engineer array using Engineer class function
 const addEngineer = () => {
     promptEngineer(engineerData).then(engineerAnswers => {
 
@@ -233,6 +245,7 @@ const addEngineer = () => {
     });
 };
 
+// Add intern data to intern array using Intern class function
 const addIntern = () => {
     promptIntern(internData).then(internAnswers => {
 
@@ -250,6 +263,7 @@ const addIntern = () => {
     });
 };
 
+// Menu function to loop through creating engineer and interm team members
 const menuLoop = function () {
     menuQuestions()
         .then((answers) => {
@@ -258,22 +272,14 @@ const menuLoop = function () {
             } else if (answers.addTeamMember === "intern") {
                 addIntern();
             } else {
-                return generatePage(teamData)
-                // .then(writeFileResponse => {
-                //     console.log(writeFileResponse);
-                //     return copyFile();
-                // })
-                // .then(copyFileResponse => {
-                //     console.log(copyFileResponse);
-                // });
-            };
-        // })
-        // .then(pageHTML => {
-        //     // console.log(pageHTML);
-        //     return writeFile(pageHTML);
+                writeFile(generatePage(teamData));
+                copyFile();
+            }
         });
 };
+/*  END FUNCTIONS */
 
+// Main logic - start by creating Manager record using Manager class then use menu function to loop through creating employee records
 promptManager()
     .then(managerAnswers => {
 
