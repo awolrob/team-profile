@@ -1,15 +1,14 @@
 const Intern = require('../lib/Intern.js');
 
-const clsIntern = new Intern('Dave', "CWRU");
-clsIntern.id = 1;
-clsIntern.email = "awolrob@gmail.com";
+const clsIntern = new Intern('Dave', 1,"awolrob@gmail.com","CWRU");
 
 test('creates a Intern object', () => {
 
   expect(clsIntern.name).toBe('Dave');
   expect(clsIntern.id).toEqual(expect.any(Number));
   expect(clsIntern.email).toEqual(expect.any(String));
-  expect(clsIntern.role).toEqual("Intern");
+  expect(clsIntern.role).toEqual("intern");
+  expect(clsIntern.school).toEqual("CWRU");
 });
 
 test("Test Get Name", () => {
@@ -27,7 +26,7 @@ test("Test Get email", () => {
 });
 
 test("Test Get role equal to Intern", () => {
-    expect(clsIntern.getRole()).toEqual("Intern");
+    expect(clsIntern.getRole()).toEqual("intern");
 });
 
 test("Test Get Intern Github", () => {

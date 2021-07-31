@@ -1,8 +1,6 @@
 const Manager = require('../lib/Manager.js');
 
-const clsManager = new Manager('Dave', "+1 555-555-5555");
-clsManager.id = 1;
-clsManager.email = "awolrob@gmail.com";
+const clsManager = new Manager('Dave', 1,"awolrob@gmail.com","+1 555-555-5555");
 
 test('creates a Manager object', () => {
 
