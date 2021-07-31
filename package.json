@@ -1,5 +1,5 @@
 {
-  "name": "MY TEAM",
+  "name": "my-team",
   "version": "1.0.0",
   "description": "application that takes in information about employees.",
   "main": "index.js",
