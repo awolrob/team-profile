@@ -1,5 +1,8 @@
 # 10 Object-Oriented Programming: Team Profile Generator
 
+## Author: Rob Ellingson
+- Source: [Github](https://github.com/awolrob/Rob-Ellingson-Portfolio)
+
 ---
     AS A manager
     I WANT to generate a webpage that displays my team's basic info
@@ -67,6 +70,7 @@
 
 ## Run
 * node index.js
+* Open [index.html](./dist/index.html) in your browser after executing 'Node index' from the command line.
 
 ## Mock-Up
 
@@ -79,3 +83,6 @@ The following image shows the generated HTML’s appearance and functionality. T
 The following image was generated using the index.js application:
 
 ![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./assets/Web-capture_31-7-2021_18543_.jpeg)
+
+- - -
+` https://github.com/awolrob | 2021-07-31 ` 

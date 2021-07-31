@@ -274,6 +274,13 @@ const menuLoop = function () {
             } else {
                 writeFile(generatePage(teamData));
                 copyFile();
+                console.log(
+                    `
+        ===================================================
+        My Team Page Created!  Saved to - ./dist/index.html
+        ===================================================
+                    `
+                );
             }
         });
 };

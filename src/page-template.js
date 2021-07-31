@@ -23,7 +23,6 @@ const generateManager = managerText => {
 
 // create the projects section
 const generateEngineerCards = engineerIn => {
-  console.log(engineerIn);
 return `
 
   ${engineerIn
@@ -39,7 +38,7 @@ return `
         <p>ID: ${id}</p>
         <a href="mailto:${email}">email: ${email}</a>
         <p>
-        <a href="https://github.com/${github}"><i class="fab fa-github mr-2"></i>GitHub Profile</a>
+        <a href="https://github.com/${github}" target="_blank"><i class="fab fa-github mr-2"></i>GitHub Profile</a>
         </p>
       </div>
     </div>
@@ -53,7 +52,6 @@ return `
 
 
 const generateInternCards = internIn => {
-  console.log(internIn);
 return `
   
   ${internIn
