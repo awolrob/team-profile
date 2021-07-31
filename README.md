@@ -82,7 +82,15 @@ The following image shows the generated HTML’s appearance and functionality. T
 
 The following image was generated using the index.js application:
 
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./assets/Web-capture_31-7-2021_18543_.jpeg)
+![Created HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./assets/Web-capture_31-7-2021_18543_.jpeg)
+
+## Video
+
+The following video was generated using the index.js application:
+
+Testing, entering and crating the HTML webpage titled “My Team”.
+https://drive.google.com/file/d/1eIaWMg95Ie9gTTIB7Z60Yeiu2vRcpoLz/view?usp=sharing
+
 
 - - -
 ` https://github.com/awolrob | 2021-07-31 ` 
